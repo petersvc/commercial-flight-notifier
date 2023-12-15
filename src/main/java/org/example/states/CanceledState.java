@@ -31,7 +31,6 @@ public class CanceledState implements State {
         throw new Exception("Não pode mudar o portão. o voo foi cancelado.");
     }
 
-
     @Override
     public void notifyPassengers() {
         for (Passenger passenger : flight.getPassengers()) {

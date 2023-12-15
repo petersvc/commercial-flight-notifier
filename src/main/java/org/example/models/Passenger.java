@@ -24,6 +24,10 @@ public class Passenger implements Notifier {
         this.notifier.notify(msg);
     }
 
+    public Notifier getNotifier() {
+        return notifier;
+    }
+
     public void setNotifier(Notifier n) {
         this.notifier = n;
     }

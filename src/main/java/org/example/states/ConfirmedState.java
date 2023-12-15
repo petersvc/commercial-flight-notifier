@@ -35,6 +35,8 @@ public class ConfirmedState implements State {
 
     @Override
     public void notifyPassengers() {
-
+        for (Passenger passenger : flight.getPassengers()) {
+            passenger.notify("Voo confirmado. Aguarde a horario de emabarque.");
+        }
     }
 }

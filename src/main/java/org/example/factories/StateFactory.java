@@ -6,20 +6,15 @@ import org.example.states.*;
 public class StateFactory {
 
     public static State createState(int stateType, Flight flight) throws Exception {
-        switch (stateType) {
-            case 1:
-                return new ScheduledState(flight);
-            case 2:
-                return new ConfirmedState(flight);
-            case 3:
-                return new CanceledState(flight);
-            case 4:
-                return new DelayedState(flight);
-            case 5:
-                return new GateChangingState(flight);
-            default:
-                throw new Exception("Invalid state type: " + stateType);
-        }
+        return switch (stateType) {
+            case 1 -> new ScheduledState(flight);
+            case 2 -> new ConfirmedState(flight);
+            case 3 -> new CanceledState(flight);
+            case 4 -> new DelayedState(flight);
+            case 5 -> new GateChangingState(flight);
+            case 6 -> new CompletedState(flight);
+            default -> throw new Exception("Invalid state type: " + stateType);
+        };
     }
 }
 

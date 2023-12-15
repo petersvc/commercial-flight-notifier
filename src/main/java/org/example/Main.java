@@ -89,8 +89,8 @@ public class Main {
                     System.out.println("3 - PushNotification ");
                     var notificationOption = scanner.nextInt();
                     var notifier = NotifierFactory.create(notificationOption);
-
-                    flight.addPassenger(new Passenger(passengerName, passengerCpf, notifier));
+                    var passenger = new Passenger(passengerName, passengerCpf, notifier);
+                    flight.addPassenger(passenger);
                     break;
 
                 case 3:
@@ -114,11 +114,12 @@ public class Main {
                     var flightToChangeState = flightRepository.findById(flightIdToChangeState);
 
                     System.out.println("Informe o novo estado do voo: ");
-                    System.out.println("1 - Cancelado");
+                    System.out.println("1 - Programado");
                     System.out.println("2 - Confirmado");
-                    System.out.println("3 - Atrasado");
-                    System.out.println("4 - Mudança de portão");
-                    System.out.println("5 - Finalizado");
+                    System.out.println("3 - Cancelado");
+                    System.out.println("4 - Atrasado");
+                    System.out.println("5 - Mudança de portão");
+                    System.out.println("6 - Concluído");
                     var stateOption = scanner.nextInt();
 
                     flightToChangeState.changeState(stateOption);

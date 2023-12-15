@@ -55,6 +55,7 @@ public class Flight {
     
     public void setState(State state) {
         this.state = state;
+        this.notifyPassengers();
     }
 
     public void notifyPassengers() {

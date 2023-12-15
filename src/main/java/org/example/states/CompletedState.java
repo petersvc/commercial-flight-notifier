@@ -33,6 +33,9 @@ public class CompletedState implements State {
 
     @Override
     public void notifyPassengers() {
-        System.out.println("Voo" + flight.getId() + "finalizado, agradecemos a preferencia.");
+        for (Passenger passenger : flight.getPassengers()) {
+            passenger.notify("Voo " + flight.getId() + " finalizado, agradecemos a preferencia.");
+        }
+        System.out.println();
     }
 }
